@@ -166,83 +166,6 @@
       color: var(--sub);
     }
 
-    /* ── Add button ── */
-    .add-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 15px;
-      border-radius: var(--radius);
-      border: 1.5px dashed var(--muted);
-      background: transparent;
-      color: var(--blue);
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      cursor: pointer;
-      margin-bottom: 14px;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .add-form {
-      display: none;
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-      margin-bottom: 14px;
-    }
-    .add-form.visible { display: block; }
-    .form-row { margin-bottom: 13px; }
-    .form-label {
-      display: block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--sub);
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-    .form-input, .form-textarea {
-      width: 100%;
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      color: var(--text);
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.92rem;
-      padding: 10px 13px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-input:focus, .form-textarea:focus { border-color: var(--blue); }
-    .form-textarea { min-height: 110px; resize: vertical; }
-    .form-actions { display: flex; gap: 10px; margin-top: 4px; }
-    .btn-save {
-      flex: 1;
-      background: var(--blue);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-sm);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 12px;
-      cursor: pointer;
-    }
-    .btn-cancel {
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      color: var(--sub);
-      font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 12px 18px;
-      cursor: pointer;
-    }
-
     /* ── Detail view ── */
     #detail-view {
       display: none;
@@ -461,31 +384,6 @@
   </div>
   <div style="max-width:640px;margin:0 auto;padding:18px 16px 0;">
     <div id="cards-container"></div>
-    <button class="add-btn" onclick="toggleForm()">＋ 새 글 추가</button>
-    <div class="add-form" id="add-form">
-      <div class="form-row">
-        <label class="form-label">제목</label>
-        <input class="form-input" id="f-title" placeholder="Where does 'Hello' come from?" />
-      </div>
-      <div style="display:flex;gap:10px;">
-        <div class="form-row" style="flex:0 0 70px;">
-          <label class="form-label">이모지</label>
-          <input class="form-input" id="f-emoji" placeholder="💡" style="text-align:center;" />
-        </div>
-        <div class="form-row" style="flex:1;">
-          <label class="form-label">카테고리</label>
-          <input class="form-input" id="f-category" placeholder="Etymology / Grammar / Idiom" />
-        </div>
-      </div>
-      <div class="form-row">
-        <label class="form-label">본문</label>
-        <textarea class="form-textarea" id="f-text" placeholder="영어 본문을 여기에 붙여넣으세요."></textarea>
-      </div>
-      <div class="form-actions">
-        <button class="btn-save" onclick="saveNew()">저장하기</button>
-        <button class="btn-cancel" onclick="toggleForm()">취소</button>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -572,9 +470,14 @@
     renderList();
   }
 
+  let filteredList = [];
+
   function renderList() {
     const c = document.getElementById('cards-container');
-    const list = data.paragraphs;
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+    filteredList = data.paragraphs.filter(item => !item.date || item.date <= today);
+    const list = filteredList;
     document.getElementById('count-label').textContent = list.length + '개';
     if (!list.length) {
       c.innerHTML = '<div class="empty-notice">아직 글이 없어요 🌱</div>';
@@ -601,7 +504,7 @@
   }
 
   function showDetail(index) {
-    currentItem = data.paragraphs[index];
+    currentItem = filteredList[index];
     const item = currentItem;
 
     // hero
@@ -667,28 +570,6 @@
     document.getElementById('list-view').style.display = 'block';
     window.scrollTo(0, 0);
     if (activeWordEl) { activeWordEl.classList.remove('active'); activeWordEl = null; }
-  }
-
-  function toggleForm() {
-    document.getElementById('add-form').classList.toggle('visible');
-  }
-
-  function saveNew() {
-    const title = document.getElementById('f-title').value.trim();
-    const text  = document.getElementById('f-text').value.trim();
-    if (!title || !text) { alert('제목과 본문을 입력해 주세요.'); return; }
-    data.paragraphs.unshift({
-      id: Date.now(),
-      emoji: document.getElementById('f-emoji').value.trim() || '📖',
-      title,
-      category: document.getElementById('f-category').value.trim() || 'English',
-      date: new Date().toISOString().slice(0,10),
-      text,
-      words: []
-    });
-    renderList();
-    toggleForm();
-    ['f-title','f-emoji','f-category','f-text'].forEach(id => document.getElementById(id).value = '');
   }
 
   loadData();

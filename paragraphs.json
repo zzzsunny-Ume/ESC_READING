@@ -4,7 +4,7 @@
       "id": 1,
       "emoji": "💡",
       "title": "Where does \"Goodbye\" come from?",
-      "date": "2025-01-01",
+      "date": "2026-03-31",
       "category": "Etymology",
       "text": "Have you ever wondered where the word \"Goodbye\" comes from? It wasn't always just a simple greeting. In the 16th century, people used to say, \"God be with ye\" as a way to wish someone safety when they were leaving. Over hundreds of years, the phrase was shortened and changed. \"God be with ye\" became \"Godbwye,\" and eventually, it turned into the \"Goodbye\" we use today!",
       "words": [
@@ -14,6 +14,23 @@
         { "word": "phrase",     "meaning": "구절, 어구",                  "pos": "noun" },
         { "word": "shortened",  "meaning": "짧아지다, 줄어들다",           "pos": "verb" },
         { "word": "eventually", "meaning": "결국, 마침내",                "pos": "adverb" }
+      ]
+    },
+
+    {
+      "id": 2,
+      "emoji": "🦦",
+      "title": "Why do sea otters hold hands?",
+      "date": "2026-04-02",
+      "category": "Animal Facts",
+      "text": "Have you ever seen sea otters floating on their backs while holding hands? This adorable behavior actually serves a very practical purpose. Sea otters often sleep in the water, and they hold hands to keep from drifting away from each other and their group due to ocean currents. Sometimes, they even wrap themselves in long seaweed called kelp to stay anchored in one spot while they nap. It’s a clever and cute way to stay safe together!",
+      "words": [
+        { "word": "floating",   "meaning": "물에 떠 있는",          "pos": "adjective" },
+        { "word": "adorable",   "meaning": "사랑스러운, 귀여운",     "pos": "adjective" },
+        { "word": "practical",  "meaning": "실용적인, 실제적인",     "pos": "adjective" },
+        { "word": "drifting",   "meaning": "표류하는, 떠내려가는",   "pos": "verb" },
+        { "word": "current",    "meaning": "해류, 물의 흐름",       "pos": "noun" },
+        { "word": "anchored",   "meaning": "고정된, 닻을 내린",      "pos": "verb" }
       ]
     }
   ]
