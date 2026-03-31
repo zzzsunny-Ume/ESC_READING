@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Daily English</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Noto+Serif:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #F2F2F7;
+      --card:      #FFFFFF;
+      --card2:     #F9F9FB;
+      --border:    #E5E5EA;
+      --sep:       #E5E5EA;
+      --text:      #1C1C1E;
+      --sub:       #6C6C70;
+      --muted:     #AEAEB2;
+      --blue:      #007AFF;
+      --blue-soft: #EAF2FF;
+      --green:     #34C759;
+      --orange:    #FF9500;
+      --red:       #FF3B30;
+      --purple:    #AF52DE;
+      --tag-blue:  #E3EFFF;
+      --tag-green: #E3F9E8;
+      --tag-orange:#FFF3E0;
+      --tag-purple:#F5EEFF;
+      --radius:    16px;
+      --radius-sm: 10px;
+      --shadow:    0 2px 12px rgba(0,0,0,0.07);
+      --shadow-lg: 0 8px 30px rgba(0,0,0,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', -apple-system, sans-serif;
+      min-height: 100vh;
+      padding-bottom: env(safe-area-inset-bottom, 24px);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: rgba(242,242,247,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      padding: 54px 20px 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .header-title {
+      font-family: 'Noto Serif', serif;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+    .header-count {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    /* ── List ── */
+    #list-view { max-width: 640px; margin: 0 auto; padding: 18px 16px 0; }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .card:active { transform: scale(0.975); box-shadow: none; }
+
+    .card-top {
+      padding: 16px 18px 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .card-emoji-wrap {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--blue-soft);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .card-info { flex: 1; }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      padding: 2px 7px;
+      margin-bottom: 5px;
+    }
+    .tag-blue   { background: var(--tag-blue);   color: var(--blue); }
+    .tag-green  { background: var(--tag-green);  color: var(--green); }
+    .tag-orange { background: var(--tag-orange); color: var(--orange); }
+    .tag-purple { background: var(--tag-purple); color: var(--purple); }
+
+    .card-title {
+      font-family: 'Noto Serif', serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.35;
+    }
+    .card-chevron {
+      color: var(--muted);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 12px;
+      flex-shrink: 0;
+    }
+
+    .card-preview {
+      padding: 0 18px 14px;
+      font-size: 0.83rem;
+      color: var(--sub);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--sep);
+      padding: 9px 18px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .word-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+    .card-word-count {
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: var(--sub);
+    }
+
+    /* ── Add button ── */
+    .add-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 15px;
+      border-radius: var(--radius);
+      border: 1.5px dashed var(--muted);
+      background: transparent;
+      color: var(--blue);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 14px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .add-form {
+      display: none;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+    .add-form.visible { display: block; }
+    .form-row { margin-bottom: 13px; }
+    .form-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--sub);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.92rem;
+      padding: 10px 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--blue); }
+    .form-textarea { min-height: 110px; resize: vertical; }
+    .form-actions { display: flex; gap: 10px; margin-top: 4px; }
+    .btn-save {
+      flex: 1;
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 12px;
+      cursor: pointer;
+    }
+    .btn-cancel {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--sub);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 12px 18px;
+      cursor: pointer;
+    }
+
+    /* ── Detail view ── */
+    #detail-view {
+      display: none;
+      max-width: 640px;
+      margin: 0 auto;
+      animation: fadeUp 0.22s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .detail-topbar {
+      background: rgba(242,242,247,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 54px 16px 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      color: var(--blue);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .detail-body { padding: 20px 16px 0; }
+
+    /* hero widget */
+    .hero-widget {
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      padding: 22px 22px 20px;
+      margin-bottom: 16px;
+    }
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .hero-emoji-wrap {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--blue-soft);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.35rem;
+    }
+    .hero-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+    .hero-title {
+      font-family: 'Noto Serif', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .hero-divider { height: 1px; background: var(--sep); margin: 16px 0; }
+
+    /* tappable paragraph */
+    .para-text {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text);
+    }
+    .tap-word {
+      cursor: pointer;
+      border-bottom: 1.5px solid #BFDBFE;
+      color: var(--text);
+      transition: color 0.12s, background 0.12s;
+      border-radius: 3px;
+      padding: 0 1px;
+    }
+    .tap-word.active {
+      color: var(--blue);
+      background: var(--blue-soft);
+      border-bottom-color: var(--blue);
+    }
+
+    /* word popup */
+    .word-popup {
+      display: none;
+      background: var(--blue);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 14px;
+      animation: popIn 0.18s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    .word-popup.visible { display: block; }
+    .popup-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+    .popup-word { font-size: 1.05rem; font-weight: 800; color: #fff; }
+    .popup-pos {
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      background: rgba(255,255,255,0.18);
+      border-radius: 4px;
+      padding: 1px 6px;
+    }
+    .popup-meaning { font-size: 0.92rem; color: rgba(255,255,255,0.9); font-weight: 600; }
+
+    /* word list widget */
+    .words-widget {
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .words-widget-header {
+      padding: 14px 18px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--sep);
+    }
+    .words-widget-icon {
+      width: 28px; height: 28px;
+      border-radius: 7px;
+      background: var(--tag-green);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+    }
+    .words-widget-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .words-widget-count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .word-row {
+      display: flex;
+      align-items: center;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--sep);
+      gap: 10px;
+    }
+    .word-row:last-child { border-bottom: none; }
+    .word-en {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      min-width: 100px;
+    }
+    .word-pos-pill {
+      font-size: 0.58rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      padding: 2px 6px;
+      white-space: nowrap;
+    }
+    .pos-verb   { background: var(--tag-orange); color: var(--orange); }
+    .pos-noun   { background: var(--tag-blue);   color: var(--blue); }
+    .pos-adverb { background: var(--tag-purple); color: var(--purple); }
+    .pos-adj    { background: var(--tag-green);  color: var(--green); }
+    .pos-other  { background: #F2F2F7; color: var(--sub); }
+
+    .word-kr {
+      font-size: 0.83rem;
+      color: var(--sub);
+      font-weight: 600;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .empty-notice {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 48px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- LIST VIEW -->
+<div id="list-view">
+  <div class="header">
+    <div class="header-inner">
+      <div class="header-title">Daily English</div>
+      <div class="header-count" id="count-label"></div>
+    </div>
+  </div>
+  <div style="max-width:640px;margin:0 auto;padding:18px 16px 0;">
+    <div id="cards-container"></div>
+    <button class="add-btn" onclick="toggleForm()">＋ 새 글 추가</button>
+    <div class="add-form" id="add-form">
+      <div class="form-row">
+        <label class="form-label">제목</label>
+        <input class="form-input" id="f-title" placeholder="Where does 'Hello' come from?" />
+      </div>
+      <div style="display:flex;gap:10px;">
+        <div class="form-row" style="flex:0 0 70px;">
+          <label class="form-label">이모지</label>
+          <input class="form-input" id="f-emoji" placeholder="💡" style="text-align:center;" />
+        </div>
+        <div class="form-row" style="flex:1;">
+          <label class="form-label">카테고리</label>
+          <input class="form-input" id="f-category" placeholder="Etymology / Grammar / Idiom" />
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">본문</label>
+        <textarea class="form-textarea" id="f-text" placeholder="영어 본문을 여기에 붙여넣으세요."></textarea>
+      </div>
+      <div class="form-actions">
+        <button class="btn-save" onclick="saveNew()">저장하기</button>
+        <button class="btn-cancel" onclick="toggleForm()">취소</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL VIEW -->
+<div id="detail-view">
+  <div class="detail-topbar">
+    <button class="back-btn" onclick="showList()">‹ 목록</button>
+  </div>
+  <div class="detail-body">
+
+    <!-- hero -->
+    <div class="hero-widget">
+      <div class="hero-top">
+        <div class="hero-emoji-wrap" id="d-emoji-wrap"></div>
+        <div>
+          <div class="hero-label" id="d-label">Today's Paragraph</div>
+          <div style="font-size:0.65rem;font-weight:600;color:var(--muted)" id="d-date"></div>
+        </div>
+      </div>
+      <div class="hero-title" id="d-title"></div>
+      <div class="hero-divider"></div>
+
+      <!-- word popup inside widget -->
+      <div class="word-popup" id="word-popup">
+        <div class="popup-row">
+          <div class="popup-word" id="p-word"></div>
+          <div class="popup-pos" id="p-pos"></div>
+        </div>
+        <div class="popup-meaning" id="p-meaning"></div>
+      </div>
+
+      <div class="para-text" id="d-paragraph"></div>
+    </div>
+
+    <!-- words widget -->
+    <div class="words-widget" id="words-widget" style="display:none;">
+      <div class="words-widget-header">
+        <div class="words-widget-icon">📚</div>
+        <div class="words-widget-title">단어 목록</div>
+        <div class="words-widget-count" id="words-count"></div>
+      </div>
+      <div id="d-wordlist"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  let data = { paragraphs: [] };
+  let currentItem = null;
+  let activeWordEl = null;
+
+  const TAG_COLORS = ['tag-blue','tag-green','tag-orange','tag-purple'];
+  function tagColor(cat) {
+    if (!cat) return 'tag-blue';
+    const map = { etymology:'tag-orange', grammar:'tag-green', idiom:'tag-purple', vocabulary:'tag-blue' };
+    return map[cat.toLowerCase()] || TAG_COLORS[cat.charCodeAt(0) % 4];
+  }
+  function posClass(pos) {
+    const m = { verb:'pos-verb', noun:'pos-noun', adverb:'pos-adverb', adjective:'pos-adj', adj:'pos-adj' };
+    return m[(pos||'').toLowerCase()] || 'pos-other';
+  }
+
+  async function loadData() {
+    try {
+      const resp = await fetch('paragraphs.json');
+      data = await resp.json();
+    } catch {
+      data = { paragraphs: [{
+        id:1, emoji:"💡",
+        title:'Where does "Goodbye" come from?',
+        date:"2025-01-01", category:"Etymology",
+        text:'Have you ever wondered where the word "Goodbye" comes from? It wasn\'t always just a simple greeting. In the 16th century, people used to say, "God be with ye" as a way to wish someone safety when they were leaving. Over hundreds of years, the phrase was shortened and changed. "God be with ye" became "Godbwye," and eventually, it turned into the "Goodbye" we use today!',
+        words:[
+          {word:"wondered",  meaning:"궁금해하다, 의아하게 생각하다", pos:"verb"},
+          {word:"greeting",  meaning:"인사, 인사말",                pos:"noun"},
+          {word:"century",   meaning:"세기, 100년",                 pos:"noun"},
+          {word:"phrase",    meaning:"구절, 어구",                  pos:"noun"},
+          {word:"shortened", meaning:"짧아지다, 줄어들다",           pos:"verb"},
+          {word:"eventually",meaning:"결국, 마침내",                pos:"adverb"}
+        ]
+      }]};
+    }
+    renderList();
+  }
+
+  function renderList() {
+    const c = document.getElementById('cards-container');
+    const list = data.paragraphs;
+    document.getElementById('count-label').textContent = list.length + '개';
+    if (!list.length) {
+      c.innerHTML = '<div class="empty-notice">아직 글이 없어요 🌱</div>';
+      return;
+    }
+    c.innerHTML = list.map((item, i) => `
+      <div class="card" onclick="showDetail(${i})">
+        <div class="card-top">
+          <div class="card-emoji-wrap">${item.emoji || '📖'}</div>
+          <div class="card-info">
+            <span class="card-tag ${tagColor(item.category)}">${item.category || 'English'}</span>
+            <div class="card-title">${item.title}</div>
+          </div>
+          <div class="card-chevron">›</div>
+        </div>
+        <div class="card-preview">${item.text}</div>
+        ${item.words && item.words.length ? `
+        <div class="card-footer">
+          <div class="word-dot"></div>
+          <div class="card-word-count">단어 ${item.words.length}개</div>
+        </div>` : ''}
+      </div>
+    `).join('');
+  }
+
+  function showDetail(index) {
+    currentItem = data.paragraphs[index];
+    const item = currentItem;
+
+    // hero
+    document.getElementById('d-emoji-wrap').textContent = item.emoji || '📖';
+    document.getElementById('d-label').textContent = (item.category || 'English').toUpperCase();
+    document.getElementById('d-date').textContent = item.date || '';
+    document.getElementById('d-title').textContent = item.title;
+
+    // build tappable paragraph
+    const wordMap = {};
+    (item.words || []).forEach(w => { wordMap[w.word.toLowerCase()] = w; });
+    const tokens = item.text.split(/(\s+)/);
+    const html = tokens.map(tok => {
+      const clean = tok.replace(/[^a-zA-Z']/g,'').toLowerCase();
+      if (wordMap[clean]) {
+        return `<span class="tap-word" data-word="${clean}" onclick="showWordPopup(this,'${clean}')">${tok}</span>`;
+      }
+      return tok;
+    }).join('');
+    document.getElementById('d-paragraph').innerHTML = html;
+    document.getElementById('word-popup').classList.remove('visible');
+
+    // word list
+    const ww = document.getElementById('words-widget');
+    const wl = document.getElementById('d-wordlist');
+    if (item.words && item.words.length) {
+      ww.style.display = 'block';
+      document.getElementById('words-count').textContent = item.words.length + '개';
+      wl.innerHTML = item.words.map(w => `
+        <div class="word-row">
+          <span class="word-en">${w.word}</span>
+          <span class="word-pos-pill ${posClass(w.pos)}">${w.pos}</span>
+          <span class="word-kr">${w.meaning}</span>
+        </div>
+      `).join('');
+    } else {
+      ww.style.display = 'none';
+    }
+
+    document.getElementById('list-view').style.display = 'none';
+    document.getElementById('detail-view').style.display = 'block';
+    window.scrollTo(0, 0);
+  }
+
+  function showWordPopup(el, wordKey) {
+    const wObj = (currentItem.words || []).find(w => w.word.toLowerCase() === wordKey);
+    if (!wObj) return;
+    if (activeWordEl) activeWordEl.classList.remove('active');
+    activeWordEl = el;
+    el.classList.add('active');
+    document.getElementById('p-word').textContent = wObj.word;
+    document.getElementById('p-pos').textContent = wObj.pos;
+    document.getElementById('p-meaning').textContent = wObj.meaning;
+    const popup = document.getElementById('word-popup');
+    popup.classList.remove('visible');
+    void popup.offsetWidth;
+    popup.classList.add('visible');
+    popup.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }
+
+  function showList() {
+    document.getElementById('detail-view').style.display = 'none';
+    document.getElementById('list-view').style.display = 'block';
+    window.scrollTo(0, 0);
+    if (activeWordEl) { activeWordEl.classList.remove('active'); activeWordEl = null; }
+  }
+
+  function toggleForm() {
+    document.getElementById('add-form').classList.toggle('visible');
+  }
+
+  function saveNew() {
+    const title = document.getElementById('f-title').value.trim();
+    const text  = document.getElementById('f-text').value.trim();
+    if (!title || !text) { alert('제목과 본문을 입력해 주세요.'); return; }
+    data.paragraphs.unshift({
+      id: Date.now(),
+      emoji: document.getElementById('f-emoji').value.trim() || '📖',
+      title,
+      category: document.getElementById('f-category').value.trim() || 'English',
+      date: new Date().toISOString().slice(0,10),
+      text,
+      words: []
+    });
+    renderList();
+    toggleForm();
+    ['f-title','f-emoji','f-category','f-text'].forEach(id => document.getElementById(id).value = '');
+  }
+
+  loadData();
+</script>
+</body>
+</html>
