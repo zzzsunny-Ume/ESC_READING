@@ -19,18 +19,35 @@
 
     {
       "id": 2,
-      "emoji": "🦦",
-      "title": "Why do sea otters hold hands?",
+      "emoji": "🧠",
+      "title": "The Science Behind Doing Nothing",
       "date": "2026-04-02",
-      "category": "Animal Facts",
-      "text": "Have you ever seen sea otters floating on their backs while holding hands? This adorable behavior actually serves a very practical purpose. Sea otters often sleep in the water, and they hold hands to keep from drifting away from each other and their group due to ocean currents. Sometimes, they even wrap themselves in long seaweed called kelp to stay anchored in one spot while they nap. It’s a clever and cute way to stay safe together!",
+      "category": "World Culture & Science",
+      "text": "In today's busy world, the Netherlands has a cultural concept called \"Niksen,\" which simply means \"to do nothing.\" Surprisingly, this isn't just about laziness; it is backed by actual neuroscience! In 2001, researchers led by Marcus Raichle discovered that when we stop focusing on tasks and just let our minds wander, a brain system called the Default Mode Network (DMN) becomes highly active. Instead of shutting down, your brain uses this downtime to process emotions, consolidate memories, and generate creative ideas. So, taking time to just stare out a window without a purpose is a scientifically proven way to keep your brain healthy and prevent burnout.",
       "words": [
-        { "word": "floating",   "meaning": "물에 떠 있는",          "pos": "adjective" },
-        { "word": "adorable",   "meaning": "사랑스러운, 귀여운",     "pos": "adjective" },
-        { "word": "practical",  "meaning": "실용적인, 실제적인",     "pos": "adjective" },
-        { "word": "drifting",   "meaning": "표류하는, 떠내려가는",   "pos": "verb" },
-        { "word": "current",    "meaning": "해류, 물의 흐름",       "pos": "noun" },
-        { "word": "anchored",   "meaning": "고정된, 닻을 내린",      "pos": "verb" }
+        { "word": "neuroscience",   "meaning": "신경과학",                 "pos": "noun" },
+        { "word": "wander",         "meaning": "(생각이) 헤매다, 거닐다", "pos": "verb" },
+        { "word": "network",        "meaning": "연결망, 네트워크",         "pos": "noun" },
+        { "word": "consolidate",    "meaning": "통합하다, 강화하다",       "pos": "verb" },
+        { "word": "scientifically", "meaning": "과학적으로",               "pos": "adverb" },
+        { "word": "burnout",        "meaning": "극도의 피로, 번아웃",     "pos": "noun" }
+      ]
+    },
+
+    {
+      "id": 3,
+      "emoji": "⚖️",
+      "title": "Pleasure vs. Happiness: The Brain Chemistry",
+      "date": "2026-04-02",
+      "category": "Neuroscience & Psychology",
+      "text": "People often confuse pleasure with happiness, but neuroscience shows they are driven by two different brain chemicals. According to researchers like Dr. Robert Lustig, dopamine is the 'reward' chemical. It gives us a quick, temporary thrill when we eat sweet food or scroll through social media, but it always leaves us wanting more. Serotonin, on the other hand, is the 'contentment' chemical. It brings long-lasting peace and happiness when we spend time with loved ones or feel a sense of achievement. Simply put, dopamine says, 'I want more,' while serotonin says, 'I have enough.'",
+      "words": [
+        { "word": "confuse",      "meaning": "혼동하다, 헷갈리게 하다", "pos": "verb" },
+        { "word": "temporary",    "meaning": "일시적인",                 "pos": "adjective" },
+        { "word": "thrill",       "meaning": "흥분, 전율",               "pos": "noun" },
+        { "word": "contentment",  "meaning": "만족감, 평안",             "pos": "noun" },
+        { "word": "long-lasting", "meaning": "오래 지속되는",             "pos": "adjective" },
+        { "word": "achievement",  "meaning": "성취, 달성",               "pos": "noun" }
       ]
     }
   ]
