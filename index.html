@@ -44,7 +44,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Header ── */
     .header {
       background: rgba(242,242,247,0.85);
       backdrop-filter: saturate(180%) blur(20px);
@@ -76,7 +75,6 @@
       margin-bottom: 3px;
     }
 
-    /* ── List ── */
     #list-view { max-width: 640px; margin: 0 auto; padding: 18px 16px 0; }
 
     .card {
@@ -166,7 +164,6 @@
       color: var(--sub);
     }
 
-    /* ── Detail view ── */
     #detail-view {
       display: none;
       max-width: 640px;
@@ -207,7 +204,6 @@
 
     .detail-body { padding: 20px 16px 0; }
 
-    /* hero widget */
     .hero-widget {
       background: var(--card);
       border-radius: 20px;
@@ -244,7 +240,6 @@
     }
     .hero-divider { height: 1px; background: var(--sep); margin: 16px 0; }
 
-    /* tappable paragraph */
     .para-text {
       font-size: 0.95rem;
       line-height: 1.85;
@@ -264,7 +259,6 @@
       border-bottom-color: var(--blue);
     }
 
-    /* word popup */
     .word-popup {
       display: none;
       background: var(--blue);
@@ -292,7 +286,6 @@
     }
     .popup-meaning { font-size: 0.92rem; color: rgba(255,255,255,0.9); font-weight: 600; }
 
-    /* word list widget */
     .words-widget {
       background: var(--card);
       border-radius: 20px;
@@ -394,7 +387,6 @@
   </div>
   <div class="detail-body">
 
-    <!-- hero -->
     <div class="hero-widget">
       <div class="hero-top">
         <div class="hero-emoji-wrap" id="d-emoji-wrap"></div>
@@ -406,7 +398,6 @@
       <div class="hero-title" id="d-title"></div>
       <div class="hero-divider"></div>
 
-      <!-- word popup inside widget -->
       <div class="word-popup" id="word-popup">
         <div class="popup-row">
           <div class="popup-word" id="p-word"></div>
@@ -418,7 +409,6 @@
       <div class="para-text" id="d-paragraph"></div>
     </div>
 
-    <!-- words widget -->
     <div class="words-widget" id="words-widget" style="display:none;">
       <div class="words-widget-header">
         <div class="words-widget-icon">📚</div>
@@ -476,7 +466,9 @@
     const c = document.getElementById('cards-container');
     const now = new Date();
     const today = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
-    filteredList = data.paragraphs.filter(item => !item.date || item.date <= today);
+    filteredList = data.paragraphs
+      .filter(item => !item.date || item.date <= today)
+      .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
     const list = filteredList;
     document.getElementById('count-label').textContent = list.length + '개';
     if (!list.length) {
@@ -507,13 +499,11 @@
     currentItem = filteredList[index];
     const item = currentItem;
 
-    // hero
     document.getElementById('d-emoji-wrap').textContent = item.emoji || '📖';
     document.getElementById('d-label').textContent = (item.category || 'English').toUpperCase();
     document.getElementById('d-date').textContent = item.date || '';
     document.getElementById('d-title').textContent = item.title;
 
-    // build tappable paragraph
     const wordMap = {};
     (item.words || []).forEach(w => { wordMap[w.word.toLowerCase()] = w; });
     const tokens = item.text.split(/(\s+)/);
@@ -527,7 +517,6 @@
     document.getElementById('d-paragraph').innerHTML = html;
     document.getElementById('word-popup').classList.remove('visible');
 
-    // word list
     const ww = document.getElementById('words-widget');
     const wl = document.getElementById('d-wordlist');
     if (item.words && item.words.length) {
