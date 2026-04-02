@@ -442,20 +442,7 @@
       const resp = await fetch('paragraphs.json');
       data = await resp.json();
     } catch {
-      data = { paragraphs: [{
-        id:1, emoji:"💡",
-        title:'Where does "Goodbye" come from?',
-        date:"2025-01-01", category:"Etymology",
-        text:'Have you ever wondered where the word "Goodbye" comes from? It wasn\'t always just a simple greeting. In the 16th century, people used to say, "God be with ye" as a way to wish someone safety when they were leaving. Over hundreds of years, the phrase was shortened and changed. "God be with ye" became "Godbwye," and eventually, it turned into the "Goodbye" we use today!',
-        words:[
-          {word:"wondered",  meaning:"궁금해하다, 의아하게 생각하다", pos:"verb"},
-          {word:"greeting",  meaning:"인사, 인사말",                pos:"noun"},
-          {word:"century",   meaning:"세기, 100년",                 pos:"noun"},
-          {word:"phrase",    meaning:"구절, 어구",                  pos:"noun"},
-          {word:"shortened", meaning:"짧아지다, 줄어들다",           pos:"verb"},
-          {word:"eventually",meaning:"결국, 마침내",                pos:"adverb"}
-        ]
-      }]};
+      data = { paragraphs: [] };
     }
     renderList();
   }
