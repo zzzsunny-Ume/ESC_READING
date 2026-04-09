@@ -66,6 +66,40 @@
         { "word": "intonation",  "meaning": "억양",                   "pos": "noun" },
         { "word": "emphasize",   "meaning": "강조하다",               "pos": "verb" }
       ]
-    }    
+    },
+    
+    {
+      "id": 6,
+      "emoji": "⛵",
+      "title": "The Ship of Theseus: What Makes You, You?",
+      "date": "2026-04-14",
+      "category": "Humanities & Philosophy",
+      "text": "Imagine an old wooden ship kept in a harbor. Over the years, its wooden planks begin to rot, so they are replaced one by one. Eventually, every single piece of wood has been swapped out for a new one. Is it still the original ship? This famous ancient Greek thought experiment, known as the Ship of Theseus, challenges our basic understanding of identity. Philosophers use it to ask questions about human beings, too. Since our bodies constantly replace old cells with new ones over the years, are we still the exact same people we were ten years ago? This paradox forces us to think deeply about what truly makes us who we are.",
+      "words": [
+        { "word": "harbor",      "meaning": "항구",               "pos": "noun" },
+        { "word": "rot",         "meaning": "썩다, 부패하다",     "pos": "verb" },
+        { "word": "swap",        "meaning": "바꾸다, 교환하다",   "pos": "verb" },
+        { "word": "identity",    "meaning": "정체성, 신원",       "pos": "noun" },
+        { "word": "philosopher", "meaning": "철학자",             "pos": "noun" },
+        { "word": "paradox",     "meaning": "역설, 패러독스",     "pos": "noun" }
+      ]
+    },
+
+    {
+      "id": 7,
+      "emoji": "🎶",
+      "title": "Why Do Songs Get Stuck in Our Heads?",
+      "date": "2026-04-16",
+      "category": "Music & Psychology",
+      "text": "Have you ever had a catchy song stuck in your head for hours, playing over and over again? Scientists call this phenomenon an 'earworm.' It usually happens with songs that have a simple, upbeat melody and repetitive lyrics. According to researchers, this occurs because of the Zeigarnik effect, a psychological rule where our brains remember incomplete tasks better than finished ones. When we hear only the catchy chorus of a song, our brain tries to finish the melody but gets stuck in a mental loop. The best way to get rid of an earworm? Try listening to the entire song from beginning to end, or simply chew some gum to distract your brain!",
+      "words": [
+        { "word": "phenomenon", "meaning": "현상", "pos": "noun" },
+        { "word": "catchy",     "meaning": "기억하기 쉬운, 중독성 있는", "pos": "adjective" },
+        { "word": "repetitive", "meaning": "반복적인", "pos": "adjective" },
+        { "word": "incomplete", "meaning": "불완전한, 미완성의", "pos": "adjective" },
+        { "word": "loop",       "meaning": "고리, 반복", "pos": "noun" },
+        { "word": "distract",   "meaning": "주의를 딴 데로 돌리다", "pos": "verb" }
+      ]
+    }
   ]
 }
