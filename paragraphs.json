@@ -49,6 +49,23 @@
         { "word": "long-lasting", "meaning": "오래 지속되는",             "pos": "adjective" },
         { "word": "achievement",  "meaning": "성취, 달성",               "pos": "noun" }
       ]
-    }
+    },
+
+    {
+      "id": 5,
+      "emoji": "🗣️",
+      "title": "The Linguist's Secret to Speaking",
+      "date": "2026-04-09",
+      "category": "Language Learning",
+      "text": "How do linguists learn to speak a new language so quickly? Instead of just memorizing grammar rules, they focus on muscle memory through a technique called 'shadowing.' This involves listening to a native speaker and repeating what they say immediately, almost like an echo. By mimicking the exact rhythm, intonation, and pronunciation, you train your mouth muscles to produce the sounds naturally. Linguists also emphasize making mistakes early and often, treating speaking as a physical skill rather than just a mental exercise.",
+      "words": [
+        { "word": "memorize",    "meaning": "암기하다",               "pos": "verb" },
+        { "word": "technique",   "meaning": "기법, 기술",             "pos": "noun" },
+        { "word": "immediately", "meaning": "즉시, 당장",             "pos": "adverb" },
+        { "word": "mimic",       "meaning": "모방하다, 흉내 내다",     "pos": "verb" },
+        { "word": "intonation",  "meaning": "억양",                   "pos": "noun" },
+        { "word": "emphasize",   "meaning": "강조하다",               "pos": "verb" }
+      ]
+    }    
   ]
 }
