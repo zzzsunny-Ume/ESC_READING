@@ -28,7 +28,7 @@
       --tag-orange:#FFF3E0;
       --tag-purple:#F5EEFF;
       --radius:    16px;
-      --radius-sm: 10px;
+      --radius-sm: 12px;
       --shadow:    0 2px 12px rgba(0,0,0,0.07);
       --shadow-lg: 0 8px 30px rgba(0,0,0,0.10);
     }
@@ -238,53 +238,58 @@
       line-height: 1.35;
       color: var(--text);
     }
+    
     .hero-divider { height: 1px; background: var(--sep); margin: 16px 0; }
+
+    /* 🔥 수정된 부분: 고정된 문장 해석 박스 */
+    .translation-box {
+      background: var(--tag-blue);
+      color: var(--blue);
+      border: 1px dashed #BFDBFE;
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    
+    /* 사용자가 문장을 클릭해서 해석이 들어왔을 때의 스타일 */
+    .translation-box.has-content {
+      background: var(--card2);
+      color: var(--text);
+      border: 1px solid var(--border);
+      text-align: left;
+    }
 
     .para-text {
       font-size: 0.95rem;
       line-height: 1.85;
       color: var(--text);
     }
-    .tap-word {
+
+    /* 문장 터치 및 활성화 스타일 */
+    .tap-sentence {
       cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+      -webkit-tap-highlight-color: transparent;
+      padding: 2px 0;
+    }
+    .tap-sentence.active-sentence {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    /* 단어는 밑줄만 남김 */
+    .tap-word {
       border-bottom: 1.5px solid #BFDBFE;
-      color: var(--text);
-      transition: color 0.12s, background 0.12s;
+      color: inherit;
       border-radius: 3px;
       padding: 0 1px;
     }
-    .tap-word.active {
-      color: var(--blue);
-      background: var(--blue-soft);
-      border-bottom-color: var(--blue);
-    }
-
-    .word-popup {
-      display: none;
-      background: var(--blue);
-      border-radius: var(--radius);
-      padding: 14px 18px;
-      margin-bottom: 14px;
-      animation: popIn 0.18s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-    .word-popup.visible { display: block; }
-    .popup-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
-    .popup-word { font-size: 1.05rem; font-weight: 800; color: #fff; }
-    .popup-pos {
-      font-size: 0.63rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      background: rgba(255,255,255,0.18);
-      border-radius: 4px;
-      padding: 1px 6px;
-    }
-    .popup-meaning { font-size: 0.92rem; color: rgba(255,255,255,0.9); font-weight: 600; }
 
     .words-widget {
       background: var(--card);
@@ -367,7 +372,6 @@
 </head>
 <body>
 
-<!-- LIST VIEW -->
 <div id="list-view">
   <div class="header">
     <div class="header-inner">
@@ -380,7 +384,6 @@
   </div>
 </div>
 
-<!-- DETAIL VIEW -->
 <div id="detail-view">
   <div class="detail-topbar">
     <button class="back-btn" onclick="showList()">‹ 목록</button>
@@ -398,13 +401,7 @@
       <div class="hero-title" id="d-title"></div>
       <div class="hero-divider"></div>
 
-      <div class="word-popup" id="word-popup">
-        <div class="popup-row">
-          <div class="popup-word" id="p-word"></div>
-          <div class="popup-pos" id="p-pos"></div>
-        </div>
-        <div class="popup-meaning" id="p-meaning"></div>
-      </div>
+      <div class="translation-box" id="translation-box">💡 문장을 클릭하면 이곳에 해석이 나타납니다.</div>
 
       <div class="para-text" id="d-paragraph"></div>
     </div>
@@ -424,7 +421,7 @@
 <script>
   let data = { paragraphs: [] };
   let currentItem = null;
-  let activeWordEl = null;
+  let activeSentenceEl = null;
 
   const TAG_COLORS = ['tag-blue','tag-green','tag-orange','tag-purple'];
   function tagColor(cat) {
@@ -493,16 +490,29 @@
 
     const wordMap = {};
     (item.words || []).forEach(w => { wordMap[w.word.toLowerCase()] = w; });
-    const tokens = item.text.split(/(\s+)/);
-    const html = tokens.map(tok => {
-      const clean = tok.replace(/[^a-zA-Z']/g,'').toLowerCase();
-      if (wordMap[clean]) {
-        return `<span class="tap-word" data-word="${clean}" onclick="showWordPopup(this,'${clean}')">${tok}</span>`;
-      }
-      return tok;
-    }).join('');
+    
+    // 문장 분리 로직 (따옴표 포함)
+    const sentences = (item.text.match(/.*?[.!?]+["']?(?=\s|$)/g) || [item.text]).map(s => s.trim());
+    
+    const html = sentences.map((sentence, sIdx) => {
+      const tokens = sentence.split(/(\s+)/);
+      const sentenceHtml = tokens.map(tok => {
+        const clean = tok.replace(/[^a-zA-Z']/g,'').toLowerCase();
+        if (wordMap[clean]) {
+          return `<span class="tap-word">${tok}</span>`;
+        }
+        return tok;
+      }).join('');
+      
+      return `<span class="tap-sentence" onclick="showTranslation(this, ${sIdx})">${sentenceHtml}</span>`;
+    }).join(' ');
+
     document.getElementById('d-paragraph').innerHTML = html;
-    document.getElementById('word-popup').classList.remove('visible');
+    
+    // 🔥 번역 박스 초기화
+    const tBox = document.getElementById('translation-box');
+    tBox.textContent = "💡 문장을 클릭하면 이곳에 해석이 나타납니다.";
+    tBox.classList.remove('has-content');
 
     const ww = document.getElementById('words-widget');
     const wl = document.getElementById('d-wordlist');
@@ -525,27 +535,31 @@
     window.scrollTo(0, 0);
   }
 
-  function showWordPopup(el, wordKey) {
-    const wObj = (currentItem.words || []).find(w => w.word.toLowerCase() === wordKey);
-    if (!wObj) return;
-    if (activeWordEl) activeWordEl.classList.remove('active');
-    activeWordEl = el;
-    el.classList.add('active');
-    document.getElementById('p-word').textContent = wObj.word;
-    document.getElementById('p-pos').textContent = wObj.pos;
-    document.getElementById('p-meaning').textContent = wObj.meaning;
-    const popup = document.getElementById('word-popup');
-    popup.classList.remove('visible');
-    void popup.offsetWidth;
-    popup.classList.add('visible');
-    popup.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  // 🔥 수정된 번역 표시 함수
+  function showTranslation(el, sIdx) {
+    if (activeSentenceEl) {
+      activeSentenceEl.classList.remove('active-sentence');
+    }
+    activeSentenceEl = el;
+    el.classList.add('active-sentence');
+
+    const translations = currentItem.translations || [];
+    const koText = translations[sIdx] || "이 문장의 해석이 제공되지 않았습니다.";
+
+    const tBox = document.getElementById('translation-box');
+    tBox.textContent = koText;
+    tBox.classList.add('has-content'); // 배경색, 정렬 등 스타일 변경
   }
 
   function showList() {
     document.getElementById('detail-view').style.display = 'none';
     document.getElementById('list-view').style.display = 'block';
     window.scrollTo(0, 0);
-    if (activeWordEl) { activeWordEl.classList.remove('active'); activeWordEl = null; }
+    
+    if (activeSentenceEl) { 
+      activeSentenceEl.classList.remove('active-sentence'); 
+      activeSentenceEl = null; 
+    }
   }
 
   loadData();

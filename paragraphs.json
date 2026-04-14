@@ -7,6 +7,13 @@
       "date": "2026-03-31",
       "category": "Etymology",
       "text": "Have you ever wondered where the word \"Goodbye\" comes from? It wasn't always just a simple greeting. In the 16th century, people used to say, \"God be with ye\" as a way to wish someone safety when they were leaving. Over hundreds of years, the phrase was shortened and changed. \"God be with ye\" became \"Godbwye,\" and eventually, it turned into the \"Goodbye\" we use today!",
+      "translations": [
+        "\"Goodbye\"라는 단어가 어디에서 유래했는지 궁금해한 적이 있나요?",
+        "항상 단순한 인사말이었던 것은 아닙니다.",
+        "16세기에 사람들은 누군가 떠날 때 안전을 기원하는 의미로 \"God be with ye(신이 당신과 함께 하기를)\"라고 말하곤 했습니다.",
+        "수백 년에 걸쳐 이 문구는 짧아지고 변했습니다.",
+        "\"God be with ye\"는 \"Godbwye\"가 되었고, 결국 오늘날 우리가 사용하는 \"Goodbye\"가 되었습니다!"
+      ],
       "words": [
         { "word": "wondered",   "meaning": "궁금해하다, 의아하게 생각하다", "pos": "verb" },
         { "word": "greeting",   "meaning": "인사, 인사말",                "pos": "noun" },
@@ -16,7 +23,6 @@
         { "word": "eventually", "meaning": "결국, 마침내",                "pos": "adverb" }
       ]
     },
-
     {
       "id": 2,
       "emoji": "🧠",
@@ -24,6 +30,13 @@
       "date": "2026-04-02",
       "category": "World Culture & Science",
       "text": "In today's busy world, the Netherlands has a cultural concept called \"Niksen,\" which simply means \"to do nothing.\" Surprisingly, this isn't just about laziness; it is backed by actual neuroscience! In 2001, researchers led by Marcus Raichle discovered that when we stop focusing on tasks and just let our minds wander, a brain system called the Default Mode Network (DMN) becomes highly active. Instead of shutting down, your brain uses this downtime to process emotions, consolidate memories, and generate creative ideas. So, taking time to just stare out a window without a purpose is a scientifically proven way to keep your brain healthy and prevent burnout.",
+      "translations": [
+        "오늘날의 바쁜 세상에서 네덜란드에는 단순히 \"아무것도 하지 않음\"을 의미하는 \"Niksen(닉센)\"이라는 문화적 개념이 있습니다.",
+        "놀랍게도 이것은 단순한 게으름이 아니라 실제 신경과학에 의해 뒷받침됩니다!",
+        "2001년 마커스 라이클이 이끄는 연구진은 우리가 작업에 집중하는 것을 멈추고 마음을 편안하게 방황하게 내버려 둘 때 '디폴트 모드 네트워크(DMN)'라는 뇌 시스템이 매우 활성화된다는 사실을 발견했습니다.",
+        "뇌는 작동을 멈추는 대신 이 휴식 시간을 사용하여 감정을 처리하고, 기억을 통합하며, 창의적인 아이디어를 생성합니다.",
+        "따라서 목적 없이 창밖을 응시하는 시간을 갖는 것은 뇌를 건강하게 유지하고 번아웃을 예방하는 과학적으로 증명된 방법입니다."
+      ],
       "words": [
         { "word": "neuroscience",   "meaning": "신경과학",                 "pos": "noun" },
         { "word": "wander",         "meaning": "(생각이) 헤매다, 거닐다", "pos": "verb" },
@@ -33,7 +46,6 @@
         { "word": "burnout",        "meaning": "극도의 피로, 번아웃",     "pos": "noun" }
       ]
     },
-
     {
       "id": 3,
       "emoji": "⚖️",
@@ -41,16 +53,23 @@
       "date": "2026-04-07",
       "category": "Neuroscience & Psychology",
       "text": "People often confuse pleasure with happiness, but neuroscience shows they are driven by two different brain chemicals. According to researchers like Dr. Robert Lustig, dopamine is the 'reward' chemical. It gives us a quick, temporary thrill when we eat sweet food or scroll through social media, but it always leaves us wanting more. Serotonin, on the other hand, is the 'contentment' chemical. It brings long-lasting peace and happiness when we spend time with loved ones or feel a sense of achievement. Simply put, dopamine says, 'I want more,' while serotonin says, 'I have enough.'",
+      "translations": [
+        "사람들은 종종 쾌락과 행복을 혼동하지만, 신경과학은 이 둘이 서로 다른 두 가지 뇌 화학 물질에 의해 유도된다는 것을 보여줍니다.",
+        "로버트 러스틱 박사와 같은 연구자들에 따르면, 도파민은 '보상' 화학 물질입니다.",
+        "그것은 우리가 단 음식을 먹거나 소셜 미디어를 스크롤할 때 빠르고 일시적인 전율을 주지만, 항상 우리가 무언가를 더 원하게 만듭니다.",
+        "반면 세로토닌은 '만족' 화학 물질입니다.",
+        "그것은 사랑하는 사람들과 시간을 보내거나 성취감을 느낄 때 오래 지속되는 평화와 행복을 가져다줍니다.",
+        "간단히 말해서, 도파민은 '더 원해'라고 말하는 반면 세로토닌은 '이걸로 충분해'라고 말합니다."
+      ],
       "words": [
         { "word": "confuse",      "meaning": "혼동하다, 헷갈리게 하다", "pos": "verb" },
-        { "word": "temporary",    "meaning": "일시적인",                 "pos": "adjective" },
-        { "word": "thrill",       "meaning": "흥분, 전율",               "pos": "noun" },
-        { "word": "contentment",  "meaning": "만족감, 평안",             "pos": "noun" },
-        { "word": "long-lasting", "meaning": "오래 지속되는",             "pos": "adjective" },
-        { "word": "achievement",  "meaning": "성취, 달성",               "pos": "noun" }
+        { "word": "temporary",    "meaning": "일시적인",                "pos": "adjective" },
+        { "word": "thrill",       "meaning": "흥분, 전율",              "pos": "noun" },
+        { "word": "contentment",  "meaning": "만족감, 평안",            "pos": "noun" },
+        { "word": "long-lasting", "meaning": "오래 지속되는",            "pos": "adjective" },
+        { "word": "achievement",  "meaning": "성취, 달성",              "pos": "noun" }
       ]
     },
-
     {
       "id": 5,
       "emoji": "🗣️",
@@ -58,16 +77,22 @@
       "date": "2026-04-09",
       "category": "Language Learning",
       "text": "How do linguists learn to speak a new language so quickly? Instead of just memorizing grammar rules, they focus on muscle memory through a technique called 'shadowing.' This involves listening to a native speaker and repeating what they say immediately, almost like an echo. By mimicking the exact rhythm, intonation, and pronunciation, you train your mouth muscles to produce the sounds naturally. Linguists also emphasize making mistakes early and often, treating speaking as a physical skill rather than just a mental exercise.",
+      "translations": [
+        "언어학자들은 어떻게 그렇게 빨리 새로운 언어를 말하는 법을 배울까요?",
+        "그들은 단순히 문법 규칙을 암기하는 대신 '쉐도잉'이라는 기술을 통해 근육 기억에 집중합니다.",
+        "이것은 원어민의 말을 듣고 마치 메아리처럼 즉각적으로 그들이 말하는 것을 반복하는 것을 포함합니다.",
+        "정확한 리듬, 억양, 발음을 모방함으로써 입 근육이 자연스럽게 소리를 내도록 훈련할 수 있습니다.",
+        "언어학자들은 또한 말하기를 단순한 정신적 운동이 아닌 신체적 기술로 취급하여, 일찍 그리고 자주 실수하는 것을 강조합니다."
+      ],
       "words": [
-        { "word": "memorize",    "meaning": "암기하다",               "pos": "verb" },
-        { "word": "technique",   "meaning": "기법, 기술",             "pos": "noun" },
-        { "word": "immediately", "meaning": "즉시, 당장",             "pos": "adverb" },
-        { "word": "mimic",       "meaning": "모방하다, 흉내 내다",     "pos": "verb" },
-        { "word": "intonation",  "meaning": "억양",                   "pos": "noun" },
-        { "word": "emphasize",   "meaning": "강조하다",               "pos": "verb" }
+        { "word": "memorize",    "meaning": "암기하다",              "pos": "verb" },
+        { "word": "technique",   "meaning": "기법, 기술",            "pos": "noun" },
+        { "word": "immediately", "meaning": "즉시, 당장",            "pos": "adverb" },
+        { "word": "mimic",       "meaning": "모방하다, 흉내 내다",    "pos": "verb" },
+        { "word": "intonation",  "meaning": "억양",                  "pos": "noun" },
+        { "word": "emphasize",   "meaning": "강조하다",              "pos": "verb" }
       ]
     },
-
     {
       "id": 7,
       "emoji": "🎶",
@@ -75,6 +100,15 @@
       "date": "2026-04-14",
       "category": "Music & Psychology",
       "text": "Have you ever had a catchy song stuck in your head for hours, playing over and over again? Scientists call this phenomenon an 'earworm.' It usually happens with songs that have a simple, upbeat melody and repetitive lyrics. According to researchers, this occurs because of the Zeigarnik effect, a psychological rule where our brains remember incomplete tasks better than finished ones. When we hear only the catchy chorus of a song, our brain tries to finish the melody but gets stuck in a mental loop. The best way to get rid of an earworm? Try listening to the entire song from beginning to end, or simply chew some gum to distract your brain!",
+      "translations": [
+        "기억하기 쉬운 노래가 머릿속에 맴돌며 몇 시간 동안 계속 반복해서 재생된 적이 있나요?",
+        "과학자들은 이 현상을 '귀벌레(earworm)'라고 부릅니다.",
+        "이 현상은 보통 단순하고 경쾌한 멜로디와 반복적인 가사를 가진 노래에서 발생합니다.",
+        "연구자들에 따르면, 이것은 우리의 뇌가 끝난 일보다 끝마치지 못한 일을 더 잘 기억한다는 심리학적 법칙인 자이가르닉 효과 때문에 발생합니다.",
+        "우리가 노래의 매력적인 후렴구만 들었을 때, 우리의 뇌는 멜로디를 끝내려고 하지만 정신적인 반복의 고리에 갇히게 됩니다.",
+        "귀벌레를 없애는 가장 좋은 방법은 무엇일까요?",
+        "노래 전체를 처음부터 끝까지 들어보거나, 껌을 씹어 뇌의 주의를 딴 데로 돌려보세요!"
+      ],
       "words": [
         { "word": "phenomenon", "meaning": "현상", "pos": "noun" },
         { "word": "catchy",     "meaning": "기억하기 쉬운, 중독성 있는", "pos": "adjective" },
@@ -82,6 +116,28 @@
         { "word": "incomplete", "meaning": "불완전한, 미완성의", "pos": "adjective" },
         { "word": "loop",       "meaning": "고리, 반복", "pos": "noun" },
         { "word": "distract",   "meaning": "주의를 딴 데로 돌리다", "pos": "verb" }
+      ]
+    },
+    {
+      "id": 8,
+      "emoji": "🗺️",
+      "title": "Prisoners of Geography",
+      "date": "2026-04-16",
+      "category": "Geography & Politics",
+      "text": "\"Geography is the prison that defines what a nation can and cannot do.\" Tim Marshall's 'Prisoners of Geography' explores how the physical features of the Earth—such as mountains, rivers, and oceans—shape global politics and the decisions of world leaders. Through ten different maps, the book explains various geopolitical strategies and historical conflicts, showing how terrain dictates a country's wealth and security. By reading this book, you will gain a profound new perspective on international news. It allows you to realize that many current events and international relations are heavily driven by the undeniable forces of nature rather than just human ideology.",
+      "translations": [
+        "\"지리는 한 국가가 할 수 있는 것과 할 수 없는 것을 결정짓는 감옥입니다.\"",
+        "팀 마샬의 '지리의 힘'은 산, 강, 바다와 같은 지구의 물리적 지형이 어떻게 세계 정치와 지도자들의 결정을 형성하는지 탐구합니다.",
+        "이 책은 10개의 다양한 지도를 통해 여러 지정학적 전략과 역사적 갈등을 설명하며, 지형이 국가의 부와 안보를 어떻게 좌우하는지 보여줍니다.",
+        "이 책을 읽음으로써 여러분은 국제 뉴스를 바라보는 깊고 새로운 관점을 얻게 될 것입니다.",
+        "또한 오늘날의 많은 사건과 국제 관계가 단순히 인간의 이념이 아니라, 거스를 수 없는 자연의 힘에 의해 크게 좌우된다는 사실을 깨닫게 해줍니다."
+      ],
+      "words": [
+        { "word": "geography", "meaning": "지리, 지리학", "pos": "noun" },
+        { "word": "geopolitical", "meaning": "지정학적인", "pos": "adjective" },
+        { "word": "dictate", "meaning": "좌우하다, 영향을 주다", "pos": "verb" },
+        { "word": "perspective", "meaning": "관점, 시각", "pos": "noun" },
+        { "word": "ideology", "meaning": "이념, 이데올로기", "pos": "noun" }
       ]
     }
   ]
