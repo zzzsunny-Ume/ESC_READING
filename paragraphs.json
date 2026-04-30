@@ -208,6 +208,30 @@
         { "word": "isolate", "meaning": "고립시키다, 격리하다", "pos": "verb" },
         { "word": "literally", "meaning": "말 그대로, 문자 그대로", "pos": "adverb" }
       ]
+    },
+
+    {
+      "id": 11,
+      "emoji": "🏺",
+      "title": "Kintsugi: Finding Beauty in the Broken",
+      "date": "2026-04-30",
+      "category": "Art & Philosophy",
+      "text": "Kintsugi is the Japanese art of repairing broken pottery with lacquer mixed with powdered gold, silver, or platinum. Rather than hiding the cracks, this technique highlights them, treating the breakage and repair as an essential part of the object’s history. It is rooted in the philosophy of 'wabi-sabi,' which finds beauty in imperfection and transience. In a world obsessed with perfection, Kintsugi teaches us a powerful lesson: our scars and failures do not make us useless; they make us more unique and resilient.",
+      "translations": [
+        "킨츠기(Kintsugi)는 깨진 도자기를 금, 은, 또는 백금 가루를 섞은 옻칠로 수리하는 일본의 예술 기법입니다.",
+        "이 기법은 금이 간 부분을 숨기는 대신 오히려 그것을 강조하며, 파손과 수리의 과정을 물건 역사의 핵심적인 부분으로 다룹니다.",
+        "이는 불완전함과 덧없음 속에서 아름다움을 찾는 '와비사비' 철학에 뿌리를 두고 있습니다.",
+        "완벽함에 집착하는 세상에서, 킨츠기는 우리에게 강력한 교훈을 전달합니다.",
+        "우리의 상처와 실패는 우리를 쓸모없게 만드는 것이 아니라, 오히려 우리를 더 독특하고 회복력 있게 만들어 줍니다."
+      ],
+      "words": [
+        { "word": "repair", "meaning": "수리하다, 보수하다", "pos": "verb" },
+        { "word": "essential", "meaning": "필수적인, 극히 중요한", "pos": "adjective" },
+        { "word": "imperfection", "meaning": "불완전함, 결함", "pos": "noun" },
+        { "word": "transience", "meaning": "덧없음, 일시적임", "pos": "noun" },
+        { "word": "obsessed", "meaning": "집착하는, 사로잡힌", "pos": "adjective" },
+        { "word": "resilient", "meaning": "회복력 있는, 탄력 있는", "pos": "adjective" }
+      ]
     }
   ]
 }
