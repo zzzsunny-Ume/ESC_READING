@@ -232,6 +232,29 @@
         { "word": "obsessed", "meaning": "집착하는, 사로잡힌", "pos": "adjective" },
         { "word": "resilient", "meaning": "회복력 있는, 탄력 있는", "pos": "adjective" }
       ]
+    },
+
+    {
+      "id": 12,
+      "emoji": "🐋",
+      "title": "The Loneliest Whale: The 52-Hertz Mystery",
+      "date": "2026-05-07",
+      "category": "Biology & Nature",
+      "text": "Since the 1980s, scientists have tracked a mysterious whale that sings at a frequency of 52 hertz. This is much higher than the normal range of blue or fin whales, which usually communicate between 15 and 25 hertz. Because of this unique pitch, it is believed that other whales cannot hear or understand its call, leading it to wander the ocean in total solitude. Despite its isolation, the whale continues to sing every year, becoming a symbol of resilience and the universal desire to be heard, even when no one seems to be listening.",
+      "translations": [
+        "1980년대 이후, 과학자들은 52헤르츠의 주파수로 노래하는 신비로운 고래를 추적해 왔습니다.",
+        "이는 보통 15에서 25헤르츠 사이로 소통하는 대왕고래나 참고래의 일반적인 범주보다 훨씬 높은 수치입니다.",
+        "이 독특한 음높이 때문에 다른 고래들은 이 노래를 듣거나 이해할 수 없다고 여겨지며, 이로 인해 이 고래는 완전한 고독 속에서 바다를 배회합니다.",
+        "고립된 상태임에도 불구하고, 이 고래는 매년 계속해서 노래를 부르며 회복력의 상징이자 아무도 듣지 않는 것 같을 때조차 누군가에게 닿고 싶어 하는 보편적인 갈망의 상징이 되었습니다."
+      ],
+      "words": [
+        { "word": "mysterious", "meaning": "신비로운, 기이한", "pos": "adjective" },
+        { "word": "frequency", "meaning": "주파수, 빈도", "pos": "noun" },
+        { "word": "pitch", "meaning": "음의 높낮이", "pos": "noun" },
+        { "word": "solitude", "meaning": "고독, 외로움", "pos": "noun" },
+        { "word": "isolation", "meaning": "고립, 격리", "pos": "noun" },
+        { "word": "desire", "meaning": "갈망, 욕구", "pos": "noun" }
+      ]
     }
   ]
 }
