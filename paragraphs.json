@@ -255,6 +255,29 @@
         { "word": "isolation", "meaning": "고립, 격리", "pos": "noun" },
         { "word": "desire", "meaning": "갈망, 욕구", "pos": "noun" }
       ]
+    },
+
+    {
+        "id": 14,
+        "emoji": "🌲",
+        "title": "The Wood Wide Web: Nature’s Hidden Internet",
+        "date": "2026-05-12",
+        "category": "Ecology & Environment",
+        "text": "Beneath every forest floor lies a complex network of fungi that connects trees together. Known as the 'Wood Wide Web,' this symbiotic system allows trees to share nutrients and even warn each other about pests or drought. Older 'mother trees' use this network to send extra sugar to younger saplings, helping them survive in the shade. It reveals that a forest is not just a collection of individual trees, but a cooperative community that works together to thrive, showing us the power of hidden connections.",
+        "translations": [
+          "모든 숲의 지표면 아래에는 나무들을 하나로 연결하는 복잡한 균류 네트워크가 존재합니다.",
+          "'우드 와이드 웹(Wood Wide Web)'이라 불리는 이 공생 시스템을 통해 나무들은 영양분을 공유하고, 해충이나 가뭄에 대해 서로 경고를 보내기도 합니다.",
+          "오래된 '어머니 나무'들은 이 네트워크를 이용해 어린 묘목들에게 여분의 당분을 보내 그늘 속에서도 생존할 수 있도록 돕습니다.",
+          "이는 숲이 단순히 개별 나무들의 집합체가 아니라, 함께 번성하기 위해 협력하는 공동체임을 드러내며 우리에게 보이지 않는 연결의 힘을 보여줍니다."
+        ],
+        "words": [
+          { "word": "symbiotic", "meaning": "공생의, 공생하는", "pos": "adjective" },
+          { "word": "nutrient", "meaning": "영양분, 영양소", "pos": "noun" },
+          { "word": "drought", "meaning": "가뭄", "pos": "noun" },
+          { "word": "sapling", "meaning": "묘목, 어린 나무", "pos": "noun" },
+          { "word": "cooperative", "meaning": "협력하는, 협동의", "pos": "adjective" },
+          { "word": "thrive", "meaning": "번창하다, 잘 자라다", "pos": "verb" }
+        ]
     }
   ]
 }
