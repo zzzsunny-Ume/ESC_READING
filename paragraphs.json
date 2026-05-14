@@ -258,26 +258,49 @@
     },
 
     {
-        "id": 14,
-        "emoji": "🌲",
-        "title": "The Wood Wide Web: Nature’s Hidden Internet",
-        "date": "2026-05-12",
-        "category": "Ecology & Environment",
-        "text": "Beneath every forest floor lies a complex network of fungi that connects trees together. Known as the 'Wood Wide Web,' this symbiotic system allows trees to share nutrients and even warn each other about pests or drought. Older 'mother trees' use this network to send extra sugar to younger saplings, helping them survive in the shade. It reveals that a forest is not just a collection of individual trees, but a cooperative community that works together to thrive, showing us the power of hidden connections.",
-        "translations": [
-          "모든 숲의 지표면 아래에는 나무들을 하나로 연결하는 복잡한 균류 네트워크가 존재합니다.",
-          "'우드 와이드 웹(Wood Wide Web)'이라 불리는 이 공생 시스템을 통해 나무들은 영양분을 공유하고, 해충이나 가뭄에 대해 서로 경고를 보내기도 합니다.",
-          "오래된 '어머니 나무'들은 이 네트워크를 이용해 어린 묘목들에게 여분의 당분을 보내 그늘 속에서도 생존할 수 있도록 돕습니다.",
-          "이는 숲이 단순히 개별 나무들의 집합체가 아니라, 함께 번성하기 위해 협력하는 공동체임을 드러내며 우리에게 보이지 않는 연결의 힘을 보여줍니다."
-        ],
-        "words": [
-          { "word": "symbiotic", "meaning": "공생의, 공생하는", "pos": "adjective" },
-          { "word": "nutrient", "meaning": "영양분, 영양소", "pos": "noun" },
-          { "word": "drought", "meaning": "가뭄", "pos": "noun" },
-          { "word": "sapling", "meaning": "묘목, 어린 나무", "pos": "noun" },
-          { "word": "cooperative", "meaning": "협력하는, 협동의", "pos": "adjective" },
-          { "word": "thrive", "meaning": "번창하다, 잘 자라다", "pos": "verb" }
-        ]
+      "id": 14,
+      "emoji": "🌲",
+      "title": "The Wood Wide Web: Nature’s Hidden Internet",
+      "date": "2026-05-12",
+      "category": "Ecology & Environment",
+      "text": "Beneath every forest floor lies a complex network of fungi that connects trees together. Known as the 'Wood Wide Web,' this symbiotic system allows trees to share nutrients and even warn each other about pests or drought. Older 'mother trees' use this network to send extra sugar to younger saplings, helping them survive in the shade. It reveals that a forest is not just a collection of individual trees, but a cooperative community that works together to thrive, showing us the power of hidden connections.",
+      "translations": [
+        "모든 숲의 지표면 아래에는 나무들을 하나로 연결하는 복잡한 균류 네트워크가 존재합니다.",
+        "'우드 와이드 웹(Wood Wide Web)'이라 불리는 이 공생 시스템을 통해 나무들은 영양분을 공유하고, 해충이나 가뭄에 대해 서로 경고를 보내기도 합니다.",
+        "오래된 '어머니 나무'들은 이 네트워크를 이용해 어린 묘목들에게 여분의 당분을 보내 그늘 속에서도 생존할 수 있도록 돕습니다.",
+        "이는 숲이 단순히 개별 나무들의 집합체가 아니라, 함께 번성하기 위해 협력하는 공동체임을 드러내며 우리에게 보이지 않는 연결의 힘을 보여줍니다."
+      ],
+      "words": [
+        { "word": "symbiotic", "meaning": "공생의, 공생하는", "pos": "adjective" },
+        { "word": "nutrient", "meaning": "영양분, 영양소", "pos": "noun" },
+        { "word": "drought", "meaning": "가뭄", "pos": "noun" },
+        { "word": "sapling", "meaning": "묘목, 어린 나무", "pos": "noun" },
+        { "word": "cooperative", "meaning": "협력하는, 협동의", "pos": "adjective" },
+        { "word": "thrive", "meaning": "번창하다, 잘 자라다", "pos": "verb" }
+      ]
+    },
+
+    {
+      "id": 16,
+      "emoji": "🍒",
+      "title": "The Miracle Berry: Rewiring Your Taste Buds",
+      "date": "2026-05-14",
+      "category": "Food Science & Biology",
+      "text": "The miracle berry, a small fruit native to West Africa, contains a unique protein called miraculin that temporarily tricks your tongue. When consumed, this protein binds to your taste buds and flips a switch: sour flavors are perceived as intense sweetness. For a short time, biting into a raw lemon feels like eating a sugary candy, and even plain vinegar can taste like honey. Beyond the novelty, researchers are investigating the berry as a natural tool to help patients manage sugar cravings or improve the palatability of food during medical treatments.",
+      "translations": [
+        "서아프리카가 원산지인 작은 과일 미라클 베리에는 혀를 일시적으로 속이는 미라쿨린이라는 독특한 단백질이 들어 있습니다.",
+        "이 열매를 섭취하면 단백질이 미뢰와 결합하여 스위치를 켭니다. 즉, 신맛을 강렬한 단맛으로 인식하게 만드는 것입니다.",
+        "잠시 동안은 생레몬을 한 입 베어 무는 것이 설탕이 든 사탕을 먹는 것처럼 느껴지고, 평범한 식초조차 꿀 같은 맛이 날 수 있습니다.",
+        "이러한 신기함을 넘어, 연구자들은 환자들이 설탕에 대한 갈망을 조절하거나 의료 치료 중 음식의 맛을 개선하는 데 도움을 줄 수 있는 천연 도구로서 이 베리를 조사하고 있습니다."
+      ],
+      "words": [
+        { "word": "native to", "meaning": "~가 원산지인, 토착의", "pos": "adjective phrase" },
+        { "word": "consume", "meaning": "섭취하다, 소비하다", "pos": "verb" },
+        { "word": "perceive", "meaning": "인식하다, 감지하다", "pos": "verb" },
+        { "word": "novelty", "meaning": "신기함, 색다른 것", "pos": "noun" },
+        { "word": "investigate", "meaning": "조사하다, 연구하다", "pos": "verb" },
+        { "word": "palatability", "meaning": "입에 맞음, 맛이 좋음", "pos": "noun" }
+      ]
     }
   ]
 }
